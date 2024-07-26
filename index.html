@@ -17,6 +17,136 @@
 			.images {
 				float: left;
 			}
+
+			.project-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+			}
+
+			.project-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				gap: 20px;
+				margin: 10px;
+			}
+
+			.project-item img {
+				width: 100%;
+				height: auto;
+				max-width: 600px; /* Adjust as needed */
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			}
+
+			@media (min-width: 768px) {
+				.project-item {
+					flex-direction: row;
+					align-items: center;
+					text-align: center;
+				}
+
+				.project-item img {
+					max-width: 50%;
+					width: auto;
+				}
+			}
+			/* Basic styling for footer */
+			footer {
+				padding: 20px;
+
+				color: white;
+				text-align: center;
+			}
+
+			/* Contact section */
+			footer .contact {
+				margin-bottom: 10px;
+			}
+
+			footer h2 {
+				color: white;
+			}
+			footer a {
+				color: white;
+				text-decoration: none;
+			}
+
+			footer h2 a:hover {
+				text-decoration: underline;
+				color: white;
+			}
+
+			/* Social media icons */
+			footer .socials {
+				list-style: none;
+				padding: 0;
+				margin: 10px 0;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			footer .socials li {
+				margin: 0 10px;
+			}
+
+			footer .socials a {
+				color: white;
+				font-size: 24px;
+				transition: color 0.3s ease;
+			}
+
+			footer .socials a:hover {
+				color: #d15df4;
+			}
+
+			/* Responsive styling */
+			@media (max-width: 768px) {
+				footer .socials {
+					flex-direction: column;
+				}
+
+				footer .socials li {
+					margin: 10px 0;
+				}
+			}
+
+			@media (max-width: 480px) {
+				footer {
+					padding: 10px;
+				}
+
+				footer h2 a {
+					font-size: 16px;
+				}
+
+				footer .socials a {
+					font-size: 20px;
+				}
+			}
+			h1 {
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: 150;
+			}
+			h1:hover {
+				background: linear-gradient(90deg, #54c6ff, #f17bfe, #4343fb);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: transform 0.5s ease-in-out;
+			}
+			.image:hover {
+				filter: grayscale();
+				cursor: pointer;
+				transform: scale(1.1);
+				transition: transform 0.5s ease-in-out;
+			}
+			.icon:hover {
+				cursor: pointer;
+				background-color: #250c2d;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -104,110 +234,119 @@
 						<h2>Projects</h2>
 						<h3>Checkout a few of my work</h3>
 					</header>
-
-					<div
-						style="
-							display: flex;
-							align-items: center;
-							margin-bottom: 20px;
-							margin-top: 10px;
-						"
-					>
-						<!-- Image -->
-						<img
-							class="images"
-							src="images/brandon-griggs-wR11KBaB86U-unsplash.jpg"
-							alt="Hostel Management System"
-							style="
-								height: 300px;
-								width: 400px;
-								margin-right: 20px;
-								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-							"
-						/>
-						<!-- Text -->
-						<div style="margin-top: 30px; margin-right: 5%; margin-left: 50px">
-							<h2>Hostel Management System</h2>
-							<p>
-								I created this project using <i>Java</i> and stored data in a
-								<i>MySQL</i> database. It streamlines hostel management
-								operations, including room allocation, billing, and maintenance
-								requests, providing a seamless experience for both
-								administrators and students. The system successfully reduced the
-								administrative burden of managing hostel operations, improved
-								tenant satisfaction.
-							</p>
-						</div>
-					</div>
-
-					<div
-						style="
-							display: flex;
-							align-items: center;
-							margin-bottom: 20px;
-							margin-top: 10px;
-						"
-					>
-						<!-- Image -->
-
-						<img
-							href="https://delightful-bite.vercel.app/"
-							class="images"
-							src="images/moreabout.jpg"
-							alt="Cake Delivery Website"
-							style="
-								height: 300px;
-								width: 600px;
-								margin-right: 20px;
-								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-								margin-top: 30px;
-							"
-						/>
-						<!-- Text -->
-						<div style="margin-top: 30px; margin-right: 5%; margin-left: 50px">
-							<h2>Cake Delivery Website</h2>
-							<p>
-								I developed a Cake Delivery Website using
-								<i>HTML, CSS, and JavaScript</i>. The platform allows customers
-								to browse, customize, and order cakes online with a responsive
-								and user-friendly interface. Key features include real-time
-								order tracking and customer reviews, enhancing the overall user
-								experience
-							</p>
-						</div>
-					</div>
-
-					<div style="display: flex; align-items: center; margin-top: 20px">
-						<!-- Image -->
-						<img
-							class="images"
-							src="images/makepp.jpg"
-							alt="Salon Appointment Booking System"
-							style="
-								width: 400px;
-								height: 300px;
-								margin-right: 20px;
-								margin-top: 30px;
-								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-							"
-						/>
-						<!-- Text -->
+					<div class="project-container">
 						<div
+							class="project-item"
 							style="
-								margin-top: 60px;
-								margin-right: 5%;
-								margin-left: 50px;
-								margin-bottom: 50px;
+								display: flex;
+								align-items: center;
+								margin-bottom: 20px;
+								margin-top: 10px;
 							"
 						>
-							<h2>Salon Appointment Booking System</h2>
-							<p>
-								I created a Salon Appointment Booking System using
-								<i>ASP.NET</i> and <i>C#</i>. The system streamlines appointment
-								scheduling, offering features like service listings, time slot
-								availability, and appointment reminders.
-							</p>
+							<!-- Image -->
+							<img
+								class="images"
+								src="images/brandon-griggs-wR11KBaB86U-unsplash.jpg"
+								alt="Hostel Management System"
+								style="
+									height: 300px;
+									width: 400px;
+									margin-right: 20px;
+									box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+								"
+							/>
+							<!-- Text -->
+							<div
+								style="margin-top: 30px; margin-right: 5%; margin-left: 50px"
+							>
+								<h2>Hostel Management System</h2>
+								<p>
+									I created this project using <i>Java</i> and stored data in a
+									<i>MySQL</i> database. It streamlines hostel management
+									operations, including room allocation, billing, and
+									maintenance requests, providing a seamless experience for both
+									administrators and students. The system successfully reduced
+									the administrative burden of managing hostel operations,
+									improved tenant satisfaction.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="project-item"
+							style="
+								display: flex;
+								align-items: center;
+								margin-bottom: 20px;
+								margin-top: 10px;
+							"
+						>
+							<!-- Image -->
+
+							<img
+								class="images"
+								src="images/product-3.jpg"
+								alt="Cake Delivery Website"
+								style="
+									height: 300px;
+									width: 400px;
+									margin-right: 20px;
+									box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+									margin-top: 30px;
+								"
+							/>
+							<!-- Text -->
+							<div
+								style="margin-top: 30px; margin-right: 5%; margin-left: 50px"
+							>
+								<h2>Cake Delivery Website</h2>
+								<p>
+									I developed a Cake Delivery Website using
+									<i>HTML, CSS, and JavaScript</i>. The platform allows
+									customers to browse, customize, and order cakes online with a
+									responsive and user-friendly interface. Key features include
+									real-time order tracking and customer reviews, enhancing the
+									overall user experience
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="project-item"
+							style="display: flex; align-items: center; margin-top: 20px"
+						>
+							<!-- Image -->
+							<img
+								class="images"
+								src="images/makepp.jpg"
+								alt="Salon Appointment Booking System"
+								style="
+									width: 400px;
+									height: 300px;
+									margin-right: 20px;
+									margin-top: 30px;
+									box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+								"
+							/>
+							<!-- Text -->
+							<div
+								style="
+									margin-top: 60px;
+									margin-right: 5%;
+									margin-left: 50px;
+									margin-bottom: 50px;
+								"
+							>
+								<h2>Salon Appointment Booking System</h2>
+								<p>
+									I created a Salon Appointment Booking System using
+									<i>ASP.NET</i> and <i>C#</i>. The system streamlines
+									appointment scheduling, offering features like service
+									listings, time slot availability, and appointment reminders.
+								</p>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -216,23 +355,13 @@
 			<!-- Footer -->
 			<footer>
 				<section>
-					<h2 style="text-align: center; margin-top: 15px">Contact Here</h2>
-					<h2>
-						<a
-							style="text-decoration: none; margin-left: 37%"
-							href="mailto:https//:mehaktufail098@gmail.com"
+					<h2 class="contact">Contact Here</h2>
+					<h2 style="color: white">
+						<a href="mailto:https//:mehaktufail098@gmail.com"
 							>mehaktufail098@gmail.com</a
 						>
 					</h2>
-					<ul
-						style="
-							align-items: center;
-							margin-left: 38%;
-
-							display: flex;
-							list-style: none;
-						"
-					>
+					<ul class="socials">
 						<li>
 							<a
 								href="https://www.reddit.com/user/Pleasant_Cheek_3313/"
@@ -256,6 +385,7 @@
 						</li>
 						<li>
 							<a
+								style="align-items: center"
 								href="https://github.com/MehakTufail09"
 								class="icon brands fa-github alt"
 								><span class="label">GitHub</span></a
